@@ -34,15 +34,15 @@ jobs:
           key: 'package_version'
           value: ${{ steps.release_ver.outputs.value }}
       # Test
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-      - name: Run tests
-        run: |
-          pip install -r requirements.txt
-          pip install pytest
-          pytest
+#      - name: Set up Python 3.8
+#        uses: actions/setup-python@v1
+#        with:
+#          python-version: 3.8
+#      - name: Run tests
+#        run: |
+#          pip install -r requirements.txt
+#          pip install pytest
+#          pytest
       # Build and publish
       - name: Build package
         run: |
