@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-from typing import override, List
+from typing import List
 
 from th2_data_services.data_source.lwdp.commands.http import GetBooks as LwdpGetBooks
 from th2_data_services.data_source.lwdp.interfaces.command import IHTTPCommand
@@ -21,19 +21,16 @@ from th2_data_services.data_source.rdp.source_api.http import API
 
 
 class GetBooks(LwdpGetBooks):
-    @override
     def handle(self, data_source: DataSource) -> List[str]:
         return list(map(lambda book: book['name'], super().handle(data_source)))
 
 
 class GetMessageAliases(IHTTPCommand):
-    @override
     def __init__(self, book_id: str):
         """GetMessageAliases constructor."""
         super().__init__()
         self._book_id = book_id
 
-    @override
     def handle(self, data_source: DataSource) -> List[str]:
         api: API = data_source.source_api
         url = api.get_url_get_message_aliases(self._book_id)
@@ -41,13 +38,11 @@ class GetMessageAliases(IHTTPCommand):
 
 
 class GetEventScopes(IHTTPCommand):
-    @override
     def __init__(self, book_id: str):
         """GetEventScopes constructor."""
         super().__init__()
         self._book_id = book_id
 
-    @override
     def handle(self, data_source: DataSource) -> List[str]:
         api: API = data_source.source_api
         url = api.get_url_get_scopes(self._book_id)
