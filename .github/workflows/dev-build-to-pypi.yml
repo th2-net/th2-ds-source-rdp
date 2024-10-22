@@ -2,9 +2,11 @@ name: Dev build and publish Python distributions to PyPI
 
 on:
   push:
-    branches:
-      - dev_*
-      - pypi_*
+    branches-ignore:
+      - master
+      - dependabot**
+    paths-ignore:
+      - README.md
 
 jobs:
   build-n-publish:
