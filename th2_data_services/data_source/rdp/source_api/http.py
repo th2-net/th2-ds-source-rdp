@@ -17,7 +17,7 @@ from th2_data_services.data_source.lwdp.source_api import API as LwdpAPI
 
 class API(LwdpAPI):
     def __encode_url(self, url: str) -> str:
-        return self._API__encode_url(url)
+        return LwdpAPI._API__encode_url(self, url)
 
     def get_url_get_books(self) -> str:
         """REST-API `books` call returns a list of books in cradleAPI."""
