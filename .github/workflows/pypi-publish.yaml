@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-      - version-2
-    # paths:
-    # - package_info.json
 
 jobs:
   build-n-publish:
@@ -27,13 +24,13 @@ jobs:
       #   with:
       #     user: __token__
       #     password: ${{ secrets.TEST_PYPI_PASSWORD }}
-      #     repository_url: https://test.pypi.org/legacy/
+      #     repository-url: https://test.pypi.org/legacy/
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_PASSWORD }}
-          repository_url: https://upload.pypi.org/legacy/
+          repository-url: https://upload.pypi.org/legacy/
   scan:
     name: Vulnerabilities scan
     uses: th2-net/.github/.github/workflows/python-scan.yml@main
