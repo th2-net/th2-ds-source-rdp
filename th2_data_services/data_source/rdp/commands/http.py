@@ -26,7 +26,7 @@ class GetBooks(LwdpGetBooks):
         return list(map(lambda book: book['name'], super().handle(data_source)))
 
 
-class GetMessageAliasesRpt(IHTTPCommand):
+class GetMessageAliases(IHTTPCommand):
     @override
     def __init__(self, book_id: str):
         """GetMessageAliases constructor."""
@@ -40,7 +40,7 @@ class GetMessageAliasesRpt(IHTTPCommand):
         return api.execute_request(url).json()
 
 
-class GetEventScopesRpt(IHTTPCommand):
+class GetEventScopes(IHTTPCommand):
     @override
     def __init__(self, book_id: str):
         """GetEventScopes constructor."""
