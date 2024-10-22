@@ -13,7 +13,7 @@ jobs:
     name: Dev build and publish Python distributions to PyPI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
 #      - name: Wait for tests to succeed
 #        uses: lewagon/wait-on-check-action@v1.2.0
@@ -49,7 +49,7 @@ jobs:
 
       # Build and publish
       - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
@@ -62,9 +62,8 @@ jobs:
           python setup.py sdist
 
       - name: Publish distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_PASSWORD }}
           repository_url: https://upload.pypi.org/legacy/
-
