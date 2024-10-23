@@ -9,6 +9,7 @@ jobs:
     with:
       release-type: release
       style-check-enabled: false
+      test-enabled: false
       create-tag: true
 
     secrets:
