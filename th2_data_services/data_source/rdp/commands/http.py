@@ -14,8 +14,8 @@
 
 from typing import List
 
-from th2_data_services.data_source.lwdp.commands.http import GetBooks as LwdpGetBooks
-from th2_data_services.data_source.lwdp.interfaces.command import IHTTPCommand
+from th2_data_services.data_source.lwdp_v2_1.commands.http import GetBooks as LwdpGetBooks
+from th2_data_services.data_source.lwdp_v2_1.interfaces.command import IHTTPCommand
 from th2_data_services.data_source.rdp.data_source.http import DataSource
 from th2_data_services.data_source.rdp.source_api.http import API
 

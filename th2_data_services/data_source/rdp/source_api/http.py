@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-from th2_data_services.data_source.lwdp.source_api import API as LwdpAPI
+from th2_data_services.data_source.lwdp_v2_1.source_api import HTTPAPI as LwdpAPI
 
 
 class API(LwdpAPI):

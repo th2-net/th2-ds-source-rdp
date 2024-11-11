@@ -14,9 +14,9 @@
 
 from typing import Union
 
-from th2_data_services.data_source.lwdp.data_source import DataSource as LwdpDataSource
-from th2_data_services.data_source.lwdp.struct import http_event_struct, http_message_struct
-from th2_data_services.data_source.lwdp.stub_builder import http_event_stub_builder, http_message_stub_builder
+from th2_data_services.data_source.lwdp_v2_1.data_source import HTTPDataSource as LwdpDataSource
+from th2_data_services.data_source.lwdp_v2_1.struct import http_event_struct, http_message_struct
+from th2_data_services.data_source.lwdp_v2_1.stub_builder import http_event_stub_builder, http_message_stub_builder
 from th2_data_services.interfaces import IEventStruct, IMessageStruct, IEventStub, IMessageStub
 from th2_data_services.data_source.rdp.source_api.http import API
 
